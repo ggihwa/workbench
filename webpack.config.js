@@ -1,7 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const webpack = require('webpack');
-const prod = process.env.NODE_ENV === 'production';
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+
+const prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
   mode: prod ? 'production' : 'development',
@@ -36,9 +37,9 @@ module.exports = {
 
   devServer: {
     historyApiFallback: true,
-    //inline: true,
+    // inline: true,
     port: 3000,
     hot: true,
-    //publicPath: '/',
+    // publicPath: '/',
   },
-};
+}

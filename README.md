@@ -7,7 +7,7 @@
 ### Install
 
 npm init @eslint/config  
-여러가지를 대답하면 .eslint.rc 파일이 생성된다.  
+여러가지를 대답하면 .eslintrc 파일이 생성된다.  
 질문내에서 필요한 패키지들을 설치할 수 있다.
 
 ### Configuration
@@ -37,12 +37,24 @@ npm install -D prettier eslint-config-prettier eslint-plugin-prettier
 eslint-config-prettier : eslint 규칙 중에 prettier와 상충되는 옵션을 모두 비활성화 한다.  
 eslint-plugin-prettier : prettier 규칙을 eslint에 리포팅하도록 한다.
 
+*인텔리제이는 prettier 플러그인을 설치하면 on save option에 따라 code formatter 로 기본 동작으로 작동함.
+
 ## 3. fix
 
 ---
 
-eslint src/* --fix 
+eslint src/* --fix
+
 * autofix가 제공되는 규칙들만 수정된다. ([*eslint rules link](https://eslint.org/docs/latest/rules/) 참고)
 * prettier 설정도 함께 수정된다.
 
 npx prettier --write . (npx prettier --check .)
+
+## 4.husky & lint-staged
+
+---
+
+### install
+
+npx mrm@2 lint-staged (참고: https://prettier.io/docs/en/precommit.html)   
+*작동이 잘 안되면 기본은 js로 되어 있으므로 lint-staged에 설정되어 있는 확장자 체크해보자. 
